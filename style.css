@@ -213,3 +213,15 @@ body {
     text-align: left;
   }
 }
+/* ===== Structural safety ===== */
+body {
+  display: block;
+}
+
+.hero,
+.values,
+.site-footer {
+  width: 100%;
+  display: block;
+  position: relative;
+}
