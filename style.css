@@ -82,3 +82,18 @@ body {
 .logo-mark img {
   animation: logoBreath 4.5s ease-in-out infinite;
 }
+
+/* ===== Hero Background Logo ===== */
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 520px;   /* 背景 Logo 的“气场大小” */
+  opacity: 0.045;           /* 极淡，核心参数 */
+  pointer-events: none;
+  z-index: 1;
+}
