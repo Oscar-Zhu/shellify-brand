@@ -61,3 +61,24 @@ body {
   font-size: 14px;
   color: #7a7a7a;
 }
+
+/* ===== Subtle Logo Breathing Effect ===== */
+
+@keyframes logoBreath {
+  0% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 6px rgba(120,200,255,0.15));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(120,200,255,0.28));
+  }
+  100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 6px rgba(120,200,255,0.15));
+  }
+}
+
+.logo-mark img {
+  animation: logoBreath 4.5s ease-in-out infinite;
+}
