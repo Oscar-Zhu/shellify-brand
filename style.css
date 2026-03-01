@@ -1,25 +1,21 @@
-html {
+/* ===== First frame anti-flash ===== */
+html,
+body {
   background-color: #0a0a0a;
 }
 
-/* Reset ===== */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* FIRST FRAME BACKGROUND (anti-flash) */
-html,
-body {
-  background-color: #0a0a0a;
-}
-
+/* ===== Base ===== */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #ffffff;
   overflow-x: hidden;
-}
 
   /* subtle grain */
   background-image:
@@ -28,15 +24,13 @@ body {
 }
 
 /* ===== Hero ===== */
-
 .hero {
   min-height: 100vh;
-  padding: 180px 0 140px;
+  padding: 180px 6% 140px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 6%;
   position: relative;
 
   background:
@@ -69,25 +63,22 @@ body {
   gap: 18px;
 }
 
-/* Logo */
-
+/* ===== Logo ===== */
 .logo-mark img {
-  width: 90px;       /* 控制 logo 大小 */
+  width: 90px;
   height: auto;
   margin-bottom: 12px;
   opacity: 0.95;
 }
 
-/* Title */
-
+/* ===== Title ===== */
 .hero h1 {
   font-size: 48px;
   font-weight: 500;
   letter-spacing: 1px;
 }
 
-/* Tagline */
-
+/* ===== Tagline ===== */
 .tagline {
   font-size: 13px;
   letter-spacing: 2px;
@@ -103,7 +94,6 @@ body {
 }
 
 /* ===== Brand Values ===== */
-
 .values {
   background: #0e0e0e;
   padding: 180px 0 140px;
@@ -133,9 +123,7 @@ body {
 }
 
 /* ===== Responsive ===== */
-
 @media (max-width: 900px) {
-
   .hero h1 {
     font-size: 36px;
   }
