@@ -1,4 +1,4 @@
-/* ===== Base Reset ===== */
+/* ===== Reset ===== */
 * {
   margin: 0;
   padding: 0;
@@ -6,136 +6,138 @@
 }
 
 body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   background-color: #0a0a0a;
+  color: #ffffff;
+  overflow-x: hidden;
+
+  /* subtle grain */
   background-image:
     radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
   background-size: 3px 3px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  color: #ffffff;
 }
 
-/* ===== Hero Section ===== */
+/* ===== Hero ===== */
+
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding-top: 40px;
+  padding: 0 6%;
   position: relative;
+
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(255, 255, 255, 0.06),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 75% 70%,
+      rgba(255, 255, 255, 0.04),
+      transparent 50%
+    ),
+    linear-gradient(to bottom, #000000, #0f0f0f);
+
+  background-size: 200% 200%;
+  animation: heroGlow 18s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 2;
+  gap: 18px;
 }
 
-/* ===== Logo ===== */
+/* Logo */
+
 .logo-mark img {
-  width: 76px;
+  width: 90px;       /* 控制 logo 大小 */
   height: auto;
-  display: block;
-  margin-bottom: 30px;
+  margin-bottom: 12px;
+  opacity: 0.95;
 }
 
-/* ===== Typography ===== */
+/* Title */
+
 .hero h1 {
   font-size: 48px;
   font-weight: 500;
-  letter-spacing: 1.5px;
-  margin-bottom: 16px;
+  letter-spacing: 1px;
 }
 
-.hero .tagline {
+/* Tagline */
+
+.tagline {
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #9a9a9a;
-  margin-bottom: 10px;
+  color: #b5b5b5;
 }
 
-.hero .sub {
-  font-size: 14px;
-  color: #7a7a7a;
+.sub {
+  font-size: 13px;
+  color: #8a8a8a;
+  max-width: 480px;
+  line-height: 1.6;
 }
 
-/* ===== Subtle Logo Breathing Effect ===== */
-
-@keyframes logoBreath {
-  0% {
-    opacity: 0.92;
-    filter: drop-shadow(0 0 6px rgba(120,200,255,0.15));
-  }
-  50% {
-    opacity: 1;
-    filter: drop-shadow(0 0 12px rgba(120,200,255,0.28));
-  }
-  100% {
-    opacity: 0.92;
-    filter: drop-shadow(0 0 6px rgba(120,200,255,0.15));
-  }
-}
-
-.logo-mark img {
-  animation: logoBreath 4.5s ease-in-out infinite;
-}
-
-/* ===== Hero Background Logo ===== */
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("logo.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 520px;   /* 背景 Logo 的“气场大小” */
-  background-position: 55% 48%;
-  opacity: 0.032;           /* 极淡，核心参数 */
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* ===== Brand Values Section ===== */
+/* ===== Brand Values ===== */
 
 .values {
-  background: #0a0a0a;
-  padding: 160px 10% 140px;
+  background: #0e0e0e;
+  padding: 140px 8%;
 }
 
 .values-inner {
   max-width: 1100px;
   margin: 0 auto;
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 80px;
 }
 
 .value-item h3 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
-  letter-spacing: 0.8px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+  color: #ffffff;
 }
 
 .value-item p {
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.8;
   color: #9a9a9a;
 }
 
 /* ===== Responsive ===== */
 
 @media (max-width: 900px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .logo-mark img {
+    width: 72px;
+  }
+
   .values {
-    padding: 120px 8% 100px;
+    padding: 100px 6%;
   }
 
   .values-inner {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 48px;
   }
 }
