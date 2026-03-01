@@ -23,7 +23,10 @@ body {
   background-size: 3px 3px;
 }
 
-/* ===== Hero ===== */
+/* ============================= */
+/* ===== Hero ================== */
+/* ============================= */
+
 .hero {
   min-height: 100vh;
   padding: 180px 6% 140px;
@@ -93,10 +96,15 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Brand Values ===== */
+/* ============================= */
+/* ===== Brand Values ========== */
+/* ============================= */
+
 .values {
   background: #0e0e0e;
-  padding: 180px 0 140px;
+  padding: 200px 0 180px;   /* ⬅ 拉开与 Hero / Footer 的节奏 */
+  position: relative;
+  z-index: 1;
 }
 
 .values-inner {
@@ -107,6 +115,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 80px;
+  text-align: center;      /* ⬅ 让第二屏真正“居中” */
 }
 
 .value-item h3 {
@@ -122,31 +131,17 @@ body {
   color: #9a9a9a;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 900px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .logo-mark img {
-    width: 72px;
-  }
-
-  .values {
-    padding: 100px 6%;
-  }
-
-  .values-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-}
-
-/* ===== Footer ===== */
+/* ============================= */
+/* ===== Footer ================= */
+/* ============================= */
 
 .site-footer {
   background: #050505;
-  padding: 120px 0 80px;
+  padding: 160px 0 100px;  /* ⬅ 强制新一屏的感觉 */
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 .footer-inner {
@@ -180,10 +175,32 @@ body {
   text-align: right;
 }
 
-/* ===== Footer Responsive ===== */
+/* ============================= */
+/* ===== Responsive ============= */
+/* ============================= */
+
 @media (max-width: 900px) {
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .logo-mark img {
+    width: 72px;
+  }
+
+  .values {
+    padding: 120px 6% 100px;
+  }
+
+  .values-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: left;
+  }
+
   .site-footer {
-    padding: 80px 0 60px;
+    padding: 100px 0 80px;
   }
 
   .footer-inner {
