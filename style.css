@@ -1,227 +1,236 @@
-/* ===== First frame anti-flash ===== */
-html,
-body {
-  background-color: #0a0a0a;
+/* ===== RESET ===== */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* ===== Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ===== BODY ===== */
 
-/* ===== Base ===== */
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #ffffff;
-  overflow-x: hidden;
-
-  /* subtle grain */
-  background-image:
-    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 3px 3px;
-}
-
-/* ============================= */
-/* ===== Hero ================== */
-/* ============================= */
-
-.hero {
-  min-height: 100vh;
-  padding: 180px 6% 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+body{
+  font-family:'Inter',sans-serif;
 
   background:
-    radial-gradient(
-      circle at 25% 30%,
-      rgba(255, 255, 255, 0.06),
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 75% 70%,
-      rgba(255, 255, 255, 0.04),
-      transparent 50%
-    ),
-    linear-gradient(to bottom, #000000, #0f0f0f);
+    linear-gradient(to bottom,#fafaf8,#efefec);
 
-  background-size: 200% 200%;
-  animation: heroGlow 18s ease-in-out infinite;
+  color:#111111;
+
+  overflow-x:hidden;
 }
 
-@keyframes heroGlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ===== HERO ===== */
+
+.hero{
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  padding:120px 8%;
 }
 
-.hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
+/* ===== HERO CONTENT ===== */
+
+.hero-content{
+  max-width:760px;
 }
 
-/* ===== Logo ===== */
-.logo-mark img {
-  width: 90px;
-  height: auto;
-  margin-bottom: 12px;
-  opacity: 0.95;
+/* ===== LOGO ===== */
+
+.logo-mark{
+  margin-bottom:40px;
 }
 
-/* ===== Title ===== */
-.hero h1 {
-  font-size: 48px;
-  font-weight: 500;
-  letter-spacing: 1px;
+.logo-mark img{
+  width:90px;
+  height:auto;
+
+  opacity:0.92;
 }
 
-/* ===== Tagline ===== */
-.tagline {
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #b5b5b5;
+/* ===== TITLE ===== */
+
+.hero h1{
+  font-size:72px;
+
+  font-weight:600;
+
+  letter-spacing:-3px;
+
+  color:#111111;
+
+  margin-bottom:20px;
 }
 
-.sub {
-  font-size: 13px;
-  color: #8a8a8a;
-  max-width: 480px;
-  line-height: 1.6;
+/* ===== TAGLINE ===== */
+
+.tagline{
+  font-size:20px;
+
+  color:#444444;
+
+  margin-bottom:14px;
+
+  letter-spacing:0.5px;
 }
 
-/* ============================= */
-/* ===== Brand Values ========== */
-/* ============================= */
+/* ===== SUB ===== */
 
-.values {
-  background: #0e0e0e;
-  padding: 200px 0 180px;   /* ⬅ 拉开与 Hero / Footer 的节奏 */
-  position: relative;
-  z-index: 1;
+.sub{
+  font-size:15px;
+
+  color:#777777;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
 }
 
-.values-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 8%;
+/* ===== VALUES ===== */
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 80px;
-  text-align: center;      /* ⬅ 让第二屏真正“居中” */
+.values{
+  padding:140px 10%;
 }
 
-.value-item h3 {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 16px;
-  color: #ffffff;
+/* ===== VALUES INNER ===== */
+
+.values-inner{
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(260px,1fr));
+
+  gap:30px;
 }
 
-.value-item p {
-  font-size: 14px;
-  line-height: 1.8;
-  color: #9a9a9a;
+/* ===== CARD ===== */
+
+.value-item{
+
+  background:
+    rgba(255,255,255,0.65);
+
+  border:
+    1px solid rgba(0,0,0,0.05);
+
+  border-radius:28px;
+
+  padding:42px;
+
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+
+  transition:0.35s ease;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.04);
 }
 
-/* ============================= */
-/* ===== Footer ================= */
-/* ============================= */
+.value-item:hover{
+  transform:translateY(-8px);
 
-.site-footer {
-  background: #050505;
-  padding: 160px 0 100px;  /* ⬅ 强制新一屏的感觉 */
-  width: 100%;
-  display: block;
-  position: relative;
-  z-index: 2;
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.08);
 }
 
-.footer-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 8%;
+/* ===== CARD TITLE ===== */
 
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 40px;
+.value-item h3{
+  font-size:22px;
+
+  margin-bottom:20px;
+
+  color:#111111;
+
+  font-weight:500;
 }
 
-.footer-brand h3 {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 12px;
+/* ===== CARD TEXT ===== */
+
+.value-item p{
+  color:#555555;
+
+  line-height:1.8;
+
+  font-size:15px;
 }
 
-.footer-brand p {
-  font-size: 13px;
-  color: #8a8a8a;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+/* ===== FOOTER ===== */
+
+.site-footer{
+
+  padding:80px 10%;
+
+  border-top:
+    1px solid rgba(0,0,0,0.06);
+
+  background:
+    rgba(255,255,255,0.45);
+
+  backdrop-filter:blur(12px);
 }
 
-.footer-meta p {
-  font-size: 12px;
-  color: #666;
-  line-height: 1.6;
-  text-align: right;
+/* ===== FOOTER INNER ===== */
+
+.footer-inner{
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:30px;
 }
 
-/* ============================= */
-/* ===== Responsive ============= */
-/* ============================= */
+/* ===== FOOTER BRAND ===== */
 
-@media (max-width: 900px) {
+.footer-brand h3{
+  font-size:26px;
 
-  .hero h1 {
-    font-size: 36px;
+  margin-bottom:10px;
+
+  color:#111111;
+}
+
+.footer-brand p{
+  color:#555555;
+}
+
+/* ===== FOOTER META ===== */
+
+.footer-meta p{
+  color:#888888;
+
+  font-size:14px;
+
+  margin-bottom:8px;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:52px;
   }
 
-  .logo-mark img {
-    width: 72px;
+  .tagline{
+    font-size:18px;
   }
 
-  .values {
-    padding: 120px 6% 100px;
+  .values{
+    padding:90px 7%;
   }
 
-  .values-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: left;
+  .value-item{
+    padding:34px;
   }
 
-  .site-footer {
-    padding: 100px 0 80px;
+  .footer-inner{
+    flex-direction:column;
   }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 32px;
-  }
-
-  .footer-meta p {
-    text-align: left;
-  }
-}
-/* ===== Structural safety ===== */
-body {
-  display: block;
-}
-
-.hero,
-.values,
-.site-footer {
-  width: 100%;
-  display: block;
-  position: relative;
 }
