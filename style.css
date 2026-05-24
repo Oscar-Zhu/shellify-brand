@@ -1,3 +1,74 @@
+/* ===== NAVBAR ===== */
+
+.navbar{
+
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  padding:22px 60px;
+
+  background:
+    rgba(255,255,255,0.55);
+
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+
+  border-bottom:
+    1px solid rgba(0,0,0,0.05);
+
+  z-index:1000;
+}
+
+/* ===== LOGO ===== */
+
+.logo a{
+
+  text-decoration:none;
+
+  color:#111111;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  letter-spacing:2px;
+}
+
+/* ===== NAV LINKS ===== */
+
+.nav-links{
+
+  display:flex;
+
+  gap:34px;
+}
+
+.nav-links a{
+
+  text-decoration:none;
+
+  color:#333333;
+
+  font-size:14px;
+
+  transition:0.3s ease;
+}
+
+.nav-links a:hover{
+
+  opacity:0.45;
+}
+
 /* ===== RESET ===== */
 
 *{
@@ -31,6 +102,8 @@ body{
   text-align:center;
 
   padding:120px 8%;
+
+  padding-top:140px;
 }
 
 /* ===== HERO CONTENT ===== */
