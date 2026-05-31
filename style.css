@@ -287,6 +287,23 @@ body{
 
 @media(max-width:768px){
 
+.navbar{
+
+    flex-direction:column;
+
+    gap:14px;
+
+    padding:18px 20px;
+}
+
+.nav-links{
+
+    gap:22px;
+}
+
+}
+{
+
   .hero h1{
     font-size:52px;
   }
